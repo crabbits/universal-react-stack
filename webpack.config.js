@@ -1,6 +1,7 @@
 'use strict'
 
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   entry: './app/client/index.jsx',
@@ -33,5 +34,10 @@ module.exports = {
         target: `http://127.0.0.1:${process.env.PORT || 8081}/`
       }
     }
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
+  ]
 }
