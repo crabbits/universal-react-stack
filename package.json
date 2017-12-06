@@ -4,8 +4,9 @@
   "description": "Universal React Stack",
   "main": "index.js",
   "scripts": {
-    "start:server": "node index.js",
+    "dev:server": "node index.js",
     "dev:build": "webpack-dev-server --progress --color --inline",
+    "dev:start": "npm run dev:server & npm run dev:build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
