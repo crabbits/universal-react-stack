@@ -17,6 +17,10 @@ Follow these steps to start your own project using this stack!
 - Change the name, description, author, repository details, homepage etc in *package.json*
 - Point to your repo and you're ready to go!!
 
+## Running
+
+To run the app locally, use `npm run start:dev` in the console. Then navigate to `localhost:8080` in your browser.
+
 ## Testing
 
 Testing framework has already been setup using Mocha, Enzyme and Chai. To run tests just run `npm test`.
