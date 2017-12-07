@@ -19,7 +19,7 @@ Follow these steps to start your own project using this stack!
 
 ## Running
 
-To run the app locally, use `npm run start:dev` in the console. Then navigate to `localhost:8080` in your browser.
+To run the app locally, use `npm run dev:start` in the console. Then navigate to `localhost:8080` in your browser.
 
 ## Testing
 
