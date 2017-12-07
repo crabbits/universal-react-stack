@@ -1,3 +1,5 @@
+[ ![Codeship Status for crabbits/universal-react-stack](https://app.codeship.com/projects/dd6c4290-bd4a-0135-c7d2-0e31f0ed0341/status?branch=master)](https://app.codeship.com/projects/259684)
+
 # universal-react-stack
 A **universal** React.js stack with Express, Redux, React Router and Webpack.
 
