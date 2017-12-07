@@ -10,7 +10,7 @@ import { StaticRouter } from 'react-router'
 import App from '../shared/components'
 
 const app = express()
-const PORT = process.env.PORT || 8081
+const PORT = process.env.PORT || 8080
 
 app.use(express.static('./dist'))
 
@@ -40,7 +40,7 @@ app.use((req, res) => {
         </head>
         <body>
           <div id='main'>${html}</div>
-          <script type='application/javascript' src='http://localhost:8080/bundle.js'></script>
+          <script type='application/javascript' src='/bundle.js'></script>
         </body>
       </html>
     `)
