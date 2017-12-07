@@ -6,9 +6,8 @@ const webpack = require('webpack')
 module.exports = {
   entry: './app/client/index.jsx',
   output: {
-    path: path.join(__dirname, '/'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'http://127.0.0.1:8080/'
   },
   resolve: {
     modules: ['app', 'app/shared', 'node_modules'],
@@ -27,13 +26,6 @@ module.exports = {
         }
       }
     ]
-  },
-  devServer: {
-    proxy: {
-      '*': {
-        target: `http://127.0.0.1:${process.env.PORT || 8081}/`
-      }
-    }
   },
   plugins: [
     new webpack.DefinePlugin({
