@@ -1,6 +1,10 @@
 # universal-react-stack
 A **universal** React.js stack with Express, Redux, React Router and Webpack.
 
+## Useful Links
+
+[React Server Side Rendering & HotReload](https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-ffb87ca81a89) by [justinjung04](https://github.com/justinjung04/)
+
 ## Install
 
 Follow these steps to start your own project using this stack!
