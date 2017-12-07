@@ -7,6 +7,7 @@ const Home = () => {
     <div>
       React! Yay!
       <NavLink to='/about'>About</NavLink>
+      <NavLink to='/team'>Team</NavLink>
     </div>
   )
 }
