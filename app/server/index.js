@@ -1,5 +1,4 @@
 import express from 'express'
-
 import path from 'path'
 
 import React from 'react'
@@ -12,7 +11,30 @@ import App from '../shared/components'
 const app = express()
 const PORT = process.env.PORT || 8080
 
-app.use(express.static('./dist'))
+if(process.env.NODE_ENV !== 'production') {
+  const webpack = require('webpack')
+  const webpackDevMiddleware = require('webpack-dev-middleware')
+  const webpackHotMiddleware = require('webpack-hot-middleware')
+  const webpackConfig = require('../../webpack.config.js')
+
+  const compiler = webpack(webpackConfig)
+
+  app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath,
+    stats: {
+      assets: false,
+      colors: true,
+      chunks: false,
+      'errors-only': true
+    }
+  }))
+
+  app.use(webpackHotMiddleware(compiler))
+  app.use(express.static(path.resolve(__dirname, 'app')))
+} else {
+  app.use(express.static(path.resolve(__dirname, 'dist')))
+}
 
 app.use((req, res) => {
 
@@ -48,6 +70,6 @@ app.use((req, res) => {
   }
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`)
 })
